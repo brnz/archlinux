@@ -1,0 +1,11 @@
+#!/bin/sh
+
+i=$1
+if [[ "$i" == "" ]] ; then
+    i="sshot.png"
+else
+    if [[ ! "$1" == *.png ]] ; then
+        i="$i.png"
+    fi
+fi
+import -window root ~/$i

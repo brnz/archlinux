@@ -1,0 +1,3 @@
+#!/bin/bash
+
+cp -a ~/{dwm,scripts,.gtkrc-2.0,.bash_profile,.bashrc,.emacs,.hgrc,.ncmpcpp,.rtorrent.rc,colors.txt,.vimrc,.xbindkeysrc,.xinitrc,.Xresources} ~/hz

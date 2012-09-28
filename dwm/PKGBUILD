@@ -1,0 +1,58 @@
+# $Id: PKGBUILD 60970 2011-12-19 21:33:58Z spupykin $
+# Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
+# Contributor: Dag Odenhall <dag.odenhall@gmail.com>
+# Contributor: Grigorios Bouzakis <grbzks@gmail.com>
+
+pkgname=dwm
+pkgver=6.0
+pkgrel=1
+pkgdesc="A dynamic window manager for X"
+url="http://dwm.suckless.org"
+arch=('i686' 'x86_64')
+license=('MIT')
+options=(zipman)
+depends=('libx11' 'libxinerama')
+install=dwm.install
+source=(http://dl.suckless.org/dwm/dwm-$pkgver.tar.gz
+	config.h
+	dwm.desktop)
+md5sums=('8bb00d4142259beb11e13473b81c0857'
+         '2453e037f46449774ec8afab49b4f1a2'
+         '939f403a71b6e85261d09fc3412269ee')
+
+build() {
+  cd $srcdir/$pkgname-$pkgver
+  cp $srcdir/config.h config.h
+  sed -i 's/CPPFLAGS =/CPPFLAGS +=/g' config.mk
+  sed -i 's/^CFLAGS = -g/#CFLAGS += -g/g' config.mk
+  sed -i 's/^#CFLAGS = -std/CFLAGS += -std/g' config.mk
+  sed -i 's/^LDFLAGS = -g/#LDFLAGS += -g/g' config.mk
+  sed -i 's/^#LDFLAGS = -s/LDFLAGS += -s/g' config.mk
+  make X11INC=/usr/include/X11 X11LIB=/usr/lib/X11
+}
+
+package() {
+  cd $srcdir/$pkgname-$pkgver
+  make PREFIX=/usr DESTDIR=$pkgdir install
+  install -m644 -D LICENSE $pkgdir/usr/share/licenses/$pkgname/LICENSE
+  install -m644 -D README $pkgdir/usr/share/doc/$pkgname/README
+  install -m644 -D $srcdir/dwm.desktop $pkgdir/usr/share/xsessions/dwm.desktop
+}
+md5sums=('8bb00d4142259beb11e13473b81c0857'
+         'c73cd9fbfc95d57016d818586175bdc3'
+         '939f403a71b6e85261d09fc3412269ee')
+md5sums=('8bb00d4142259beb11e13473b81c0857'
+         'c73cd9fbfc95d57016d818586175bdc3'
+         '939f403a71b6e85261d09fc3412269ee')
+md5sums=('8bb00d4142259beb11e13473b81c0857'
+         'd3c76721e655d6f2744ef74d1bc32238'
+         '939f403a71b6e85261d09fc3412269ee')
+md5sums=('8bb00d4142259beb11e13473b81c0857'
+         '62c710290eee0a7c5678c49bdf7d8de3'
+         '939f403a71b6e85261d09fc3412269ee')
+md5sums=('8bb00d4142259beb11e13473b81c0857'
+         '845bdf492f9a966e992130e55ce4c3b5'
+         '939f403a71b6e85261d09fc3412269ee')
+md5sums=('8bb00d4142259beb11e13473b81c0857'
+         '769cd2078ee1cd209d982f6574f48936'
+         '939f403a71b6e85261d09fc3412269ee')
