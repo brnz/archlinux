@@ -9,5 +9,7 @@
 PS1='[\u@\h \W]\$ '
 
 alias ls='ls -X --color=auto'
-alias ll='ls -Ahl --color=auto'
-alias emacs='emacs -nw --color=auto'
+alias ll='ls -Ahl'
+alias emacs='emacs -nw'
+alias vlc='cvlc'
+alias sshot='~/scripts/sshot'
