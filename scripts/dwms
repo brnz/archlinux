@@ -1,0 +1,95 @@
+#!/bin/bash
+
+declare -a image=(">----" "=>---" "==>--" "===>-" "====>" "=====" "-----")
+
+prnt_acpi ()
+{
+    bttry=$(acpi -b)
+    adptr=$(acpi -a)
+    thrml=$(acpi -tf)
+    bttry="${bttry#*, }"
+    bttry="${bttry%%%*}"
+
+    i=$((bttry/17))
+    if [ $bttry -lt 4 ]
+    then
+        let "i = 6"
+    fi
+
+    if [[ "$adptr" == *on-line* ]]
+    then
+        j=$(date +"%S")
+        j="${j#0}"
+        let "k = $j % 2"
+
+        if [ $i -lt 5 ] && [ $k -eq 0 ]
+        then
+            let "i++"
+        fi
+    fi
+    echo -ne ${image[i]}
+}
+
+prnt_amxr ()
+{
+    mastr=$(amixer get Master)
+
+    m=6
+    if [[ ! "$mastr" == *off* ]]
+    then
+        mastr="${mastr#*[}"
+        l="%*"
+        mastr="${mastr%$l}"
+
+        if [ ! $mastr -eq 0 ]
+        then
+            m=$((mastr/17))
+        fi
+    fi
+    echo -ne ${image[m]}
+}
+
+prnt_date ()
+{
+    echo -ne "$(date "+%a %m.%d | %H:%M")"
+}
+
+prnt_ncfg ()
+{
+    crrnt="$(netcfg current)"
+    crrnt="${crrnt#*-}"
+    if [[ "$crrnt" == "" ]]
+    then
+        crrnt="sorry bud"
+    fi
+    echo -ne ${crrnt}
+}
+
+prnt_ncmp ()
+{
+    music="$(ncmpcpp --now-playing)"
+    music="${music#* }"
+    echo -ne ${music}
+}
+
+prnt_case ()
+{
+    strng="$(prnt_ncmp) | $(prnt_ncfg) | Vol.$(prnt_amxr) | Pwr $(prnt_acpi) | $(prnt_date)"
+    case $1 in
+    lower)
+        echo -ne ${strng} | tr '[A-Z]' '[a-z]'
+        ;;
+    upper)
+        echo -ne ${strng} | tr '[a-z]' '[A-Z]'
+        ;;
+    *)
+        echo -ne ${strng}
+        ;;
+    esac
+}
+
+while true
+do
+    xsetroot -name "$(prnt_case lower)"
+    sleep .17
+done
