@@ -62,13 +62,6 @@ prnt_ncfg ()
     then
         crrnt="sorry bud"
     fi
-
-    n=`expr length $crrnt`
-    if [ $n -gt 9 ]
-    then
-        crrnt=`expr substr $crrnt 1 8`
-        crrnt="$crrnt."
-    fi
     echo -ne ${crrnt}
 }
 
