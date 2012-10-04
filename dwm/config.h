@@ -14,12 +14,12 @@ static const Bool showbar           = True;     /* False means no bar */
 static const Bool topbar            = True;     /* False means bottom bar */
 
 /* tagging */
-static const char *tags[] = { "!", "@", "#", "$", "%" };
+static const char *tags[] = { "u", "d", "t", "q" };
 
 static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            True,        -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 4,       False,       -1 },
+	{ "Firefox",  NULL,       NULL,       1 << 3,       False,       -1 },
 };
 
 /* layout(s) */

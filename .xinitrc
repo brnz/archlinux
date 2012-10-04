@@ -16,7 +16,7 @@ fi
 # exec startxfce4
 # ...or the Window Manager of your choice
 
-hsetroot -tile ~/imgs/Tooth_decay.png
+hsetroot -fill ~/imgs/Planets.jpg
 
 xbindkeys
 

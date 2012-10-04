@@ -1,3 +1,13 @@
 #!/bin/bash
 
 cp -a ~/{dwm,scripts,.gtkrc-2.0,.bash_profile,.bashrc,.emacs,.hgrc,.ncmpcpp,.rtorrent.rc,colors.txt,.vimrc,.xbindkeysrc,.xinitrc,.Xresources} ~/hz
+cd ~/hz
+git add . -A
+
+i=$1
+if [[ "$i" == "" ]] ; then
+    i="nothing"
+fi
+
+git commit -m '$i'
+git push -u origin master
