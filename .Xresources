@@ -3,7 +3,7 @@ URxvt.font:             -*-terminus-medium-*-*-*-14-*-*-*-*-*-*-*
 URxvt.perl-ext-common:  default,url-select
 URxvt.colorUL:          #73d216
 URxvt.keysym.M-u:       perl:url-select:select_next
-URxvt.termName:screen-16color
+URxvt.termName:rxvt-unicode-256color
 *.url-select.launcher:  /usr/bin/firefox -new-tab
 *.url-select.underline: true
 *.foreground:           #eeeeec
