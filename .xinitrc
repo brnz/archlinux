@@ -16,7 +16,7 @@ fi
 # exec startxfce4
 # ...or the Window Manager of your choice
 
-hsetroot -fill ~/imgs/Planets.jpg
+hsetroot -center ~/imgs/Grizzly_Bear1280x854.jpg
 
 xbindkeys
 

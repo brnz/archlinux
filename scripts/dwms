@@ -1,6 +1,6 @@
 #!/bin/bash
 
-declare -a image=(">----" ">>---" ">>>--" ">>>>-" ">>>>>" "#####" "-----")
+declare -a image=("[#----]" "[##---]" "[###--]" "[####-]" "[#####]" "[#####]" "[-----]")
 
 prnt_acpi ()
 {
@@ -74,7 +74,7 @@ prnt_ncmp ()
 
 prnt_case ()
 {
-    strng="$(prnt_ncmp) | $(prnt_ncfg) | Vol.$(prnt_amxr) | Pwr $(prnt_acpi) | $(prnt_date)"
+    strng="$(prnt_ncmp) | $(prnt_ncfg) | Vol $(prnt_amxr) | Pwr $(prnt_acpi) | $(prnt_date)"
     case $1 in
     lower)
         echo -ne ${strng} | tr '[A-Z]' '[a-z]'

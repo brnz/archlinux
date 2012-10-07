@@ -254,7 +254,7 @@ mpd_communication_mode = "notifications" (polling/notifications)
 ##   not available.
 ##
 #
-#song_columns_list_format = "(7f)[green]{l} (25)[cyan]{a} (40)[]{t|f} (30)[red]{b}"
+song_columns_list_format = "(7f)[green]{l} (25)[cyan]{a} (40)[white]{t|f} (30)[red]{b}"
 #
 ##### various settings #####
 #
