@@ -1,7 +1,7 @@
 URxvt.scrollBar:        false
 URxvt.font:             -*-terminus-medium-*-*-*-14-*-*-*-*-*-*-*
 URxvt.perl-ext-common:  default,url-select
-URxvt.colorUL:          #73d216
+URxvt.colorUL:          #3465a4
 URxvt.keysym.M-u:       perl:url-select:select_next
 URxvt.termName:rxvt-unicode-256color
 *.url-select.launcher:  /usr/bin/firefox -new-tab
