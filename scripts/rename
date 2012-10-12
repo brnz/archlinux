@@ -1,6 +1,8 @@
+!#/bin/bash
+
 a=1
-for i in *.mkv; do
-  new=$(printf "$12x%02d.mkv" ${a})
+for i in *.$2; do
+  new=$(printf "$12x%02d.$2" ${a})
   mv ${i} ${new}
   let a=a+1
 done
