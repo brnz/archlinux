@@ -23,4 +23,4 @@ xbindkeys
 xset +fp /usr/share/fonts/local
 xset fp rehash
 
-exec ck-launch-session dbus-launch --sh-syntax --exit-with-session ~/scripts/dwmx
+exec ck-launch-session dbus-launch --sh-syntax --exit-with-session ~/scripts/dwm2

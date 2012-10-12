@@ -1,6 +1,6 @@
 #!/bin/bash
 
-declare -a image=("[#----]" "[##---]" "[###--]" "[####-]" "[#####]" "[#####]" "[-----]")
+declare -a image=("0001" "0010" "0011" "0100" "0101" "0110" "0111" "1000" "1001" "1010" "1011" "1100" "1101" "1110" "1111" "0000")
 
 prnt_acpi ()
 {
@@ -10,10 +10,10 @@ prnt_acpi ()
     bttry="${bttry#*, }"
     bttry="${bttry%%%*}"
 
-    i=$((bttry/17))
+    i=$((bttry/7))
     if [ $bttry -lt 4 ]
     then
-        let "i = 6"
+        let "i = 15"
     fi
 
     if [[ "$adptr" == *on-line* ]]
@@ -22,7 +22,7 @@ prnt_acpi ()
         j="${j#0}"
         let "k = $j % 2"
 
-        if [ $i -lt 5 ] && [ $k -eq 0 ]
+        if [ $i -lt 14 ] && [ $k -eq 0 ]
         then
             let "i++"
         fi
@@ -34,7 +34,7 @@ prnt_amxr ()
 {
     mastr=$(amixer get Master)
 
-    m=6
+    m=15
     if [[ ! "$mastr" == *off* ]]
     then
         mastr="${mastr#*[}"
@@ -43,7 +43,7 @@ prnt_amxr ()
 
         if [ ! $mastr -eq 0 ]
         then
-            m=$((mastr/17))
+            m=$((mastr/7))
         fi
     fi
     echo -ne ${image[m]}
@@ -74,7 +74,7 @@ prnt_ncmp ()
 
 prnt_case ()
 {
-    strng="$(prnt_ncmp) | $(prnt_ncfg) | Vol $(prnt_amxr) | Pwr $(prnt_acpi) | $(prnt_date)"
+    strng="$(prnt_ncmp) | $(prnt_ncfg) | $(prnt_amxr) | $(prnt_acpi) | $(prnt_date)"
     case $1 in
     lower)
         echo -ne ${strng} | tr '[A-Z]' '[a-z]'
