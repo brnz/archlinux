@@ -1,10 +1,10 @@
 #!/bin/sh
 
 i=$1
-if [[ "$i" == "" ]] ; then
+if [[ "$i" == "" ]]; then
     i="sshot.png"
 else
-    if [[ ! "$i" == *.png ]] ; then
+    if [[ ! "$i" == *.png ]]; then
         i="$i.png"
     fi
 fi

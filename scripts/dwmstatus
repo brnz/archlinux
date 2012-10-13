@@ -1,23 +1,5 @@
 #!/bin/bash
 
-#declare -a image=("0001" "0010" "0011" "0100" "0101" "0110" "0111" "1000" "1001" "1010" "1011" "1100" "1101" "1110" "1111" "0000")
-declare -a image=(":.............."
-                  "::............."
-                  ":::............"
-                  "::::..........."
-                  ":::::.........."
-                  "::::::........."
-                  ":::::::........"
-                  "::::::::......."
-                  ":::::::::......"
-                  "::::::::::....."
-                  ":::::::::::...."
-                  "::::::::::::..."
-                  ":::::::::::::.."
-                  "::::::::::::::."
-                  ":::::::::::::::"
-                  "...............")
-
 prnt_acpi ()
 {
     bttry=$(acpi -b)
@@ -25,44 +7,28 @@ prnt_acpi ()
     thrml=$(acpi -tf)
     bttry="${bttry#*, }"
     bttry="${bttry%%%*}"
+    bttry=$(printf "%03d" ${bttry})
 
-    i=$((bttry/7))
-    if [ $bttry -lt 4 ]
-    then
-        let "i = 15"
+    if [[ "$adptr" == *on-line* ]]; then
+        echo -ne "Pwr ${bttry}"
+    else
+        echo -ne "Pwr ${bttry}"
     fi
-
-    if [[ "$adptr" == *on-line* ]]
-    then
-        j=$(date +"%S")
-        j="${j#0}"
-        let "k = $j % 2"
-
-        if [ $i -lt 14 ] && [ $k -eq 0 ]
-        then
-            let "i++"
-        fi
-    fi
-    echo -ne ${image[i]}
 }
 
 prnt_amxr ()
 {
     mastr=$(amixer get Master)
 
-    m=15
-    if [[ ! "$mastr" == *off* ]]
-    then
+    if [[ "$mastr" == *off* ]]; then
+        echo -ne "Vol mut"
+    else
         mastr="${mastr#*[}"
         l="%*"
         mastr="${mastr%$l}"
-
-        if [ ! $mastr -eq 0 ]
-        then
-            m=$((mastr/7))
-        fi
+        mastr=$(printf "%03d" ${mastr})
+        echo -ne "Vol ${mastr}"
     fi
-    echo -ne ${image[m]}
 }
 
 prnt_date ()
@@ -107,5 +73,5 @@ prnt_case ()
 while true
 do
     xsetroot -name "$(prnt_case lower)"
-    sleep .17
+    sleep .01
 done
