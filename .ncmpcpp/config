@@ -170,11 +170,11 @@ mpd_communication_mode = "notifications" (polling/notifications)
 ## Note: colors can be nested.
 ##
 #
-#song_list_format = "{%a - }{%t}|{$8%f$9}$R{$3(%l)$9}"
+song_list_format = "{%a $1‣ $9}{%t}|{$8%f$9}$R{$1%l$9}"
 #
-#song_status_format = "{{%a{ \"%b\"{ (%y)}} - }{%t}}|{%f}"
+song_status_format = "{%a{ $b%b$/b{ %y}} $b‣ $/b}{$8%t$9}|{%f}"
 #
-#song_library_format = "{%n - }{%t}|{%f}"
+song_library_format = "{%n }{%t}|{%f}"
 #
 #tag_editor_album_format = "{(%y) }%b"
 #
@@ -204,9 +204,9 @@ mpd_communication_mode = "notifications" (polling/notifications)
 ## text attributes listed above.
 ##
 #
-#now_playing_prefix = "$b"
+now_playing_prefix = "$1$b‣‣ $/b$9$7"
 #
-#now_playing_suffix = "$/b"
+now_playing_suffix = "$9"
 #
 #browser_playlist_prefix = "$2playlist$9 "
 #
@@ -216,7 +216,7 @@ mpd_communication_mode = "notifications" (polling/notifications)
 #
 ## colors are not supported for below variable
 #
-#song_window_title_format = "{%a - }{%t}|{%f}"
+song_window_title_format = "{%a - }{%t}|{%f}"
 #
 ##### columns settings #####
 ##
@@ -254,7 +254,7 @@ mpd_communication_mode = "notifications" (polling/notifications)
 ##   not available.
 ##
 #
-song_columns_list_format = "(7f)[green]{l} (25)[cyan]{a} (40)[white]{t|f} (30)[red]{b}"
+#song_columns_list_format = "(7f)[blue]{l} (25)[black]{a} (40)[black]{t|f} (30)[black]{b}"
 #
 ##### various settings #####
 #
@@ -273,13 +273,13 @@ song_columns_list_format = "(7f)[green]{l} (25)[cyan]{a} (40)[white]{t|f} (30)[r
 #
 #playlist_separate_albums = "no"
 #
-playlist_display_mode = "columns" (classic/columns)
+playlist_display_mode = "classic" (classic/columns)
 #
-browser_display_mode = "columns" (classic/columns)
+browser_display_mode = "classic" (classic/columns)
 #
-search_engine_display_mode = "columns" (classic/columns)
+search_engine_display_mode = "classic" (classic/columns)
 #
-playlist_editor_display_mode = "columns" (classic/columns)
+playlist_editor_display_mode = "classic" (classic/columns)
 #
 #discard_colors_if_item_is_selected = "yes"
 #
@@ -299,7 +299,7 @@ progressbar_look = "─╼"
 #
 #default_place_to_search_in = "database" (database/playlist)
 #
-user_interface = "alternative" (classic/alternative)
+user_interface = "classic" (classic/alternative)
 #
 #media_library_left_column = "a" (possible values: a,y,g,c,p, legend above)
 #
@@ -315,7 +315,7 @@ user_interface = "alternative" (classic/alternative)
 #
 #statusbar_visibility = "yes"
 #
-#titles_visibility = "yes"
+titles_visibility = "no"
 #
 #header_text_scrolling = "yes"
 #
@@ -459,29 +459,29 @@ user_interface = "alternative" (classic/alternative)
 #
 #empty_tag_color = "cyan"
 #
-#header_window_color = "default"
+header_window_color = "black"
 #
-#volume_color = "default"
+volume_color = "yellow"
 #
 #state_line_color = "default"
 #
 #state_flags_color = "default"
 #
-#main_window_color = "yellow"
+main_window_color = "blue"
 #
 #color1 = "white"
 #
 #color2 = "green"
 #
-#main_window_highlight_color = "yellow"
+main_window_highlight_color = "blue"
 #
-#progressbar_color = "default"
+progressbar_color = "white"
 #
-#statusbar_color = "default"
+statusbar_color = "black"
 #
 #alternative_ui_separator_color = "black"
 #
-#active_column_color = "red"
+active_column_color = "cyan"
 #
 #visualizer_color = "yellow"
 #
