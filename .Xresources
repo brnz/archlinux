@@ -1,10 +1,11 @@
 URxvt.scrollBar:        false
-!URxvt.font:             -*-terminus-medium-*-*-*-14-*-*-*-*-*-*-*
+URxvt.cursorBlink:      true
 URxvt.font:             xft:dejavu sans mono:size=10
+!URxvt.font:             xft:tamsyn:size=10
 URxvt.perl-ext-common:  default,url-select
 URxvt.colorUL:          #3465a4
 URxvt.keysym.M-u:       perl:url-select:select_next
-URxvt.termName:rxvt-unicode-256color
+URxvt.termName:         rxvt-unicode-256color
 *.url-select.launcher:  /usr/bin/firefox -new-tab
 *.url-select.underline: true
 *.foreground:           #eeeeec
