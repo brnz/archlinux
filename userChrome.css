@@ -7,9 +7,9 @@
  * dead letter office
  */
 * {
-  /* font-size: 10pt !important; */
+  /* font-family: dejavu sans mono !important; */
 
-  /* font-family: serif !important; */
+  /* font-size: 10pt !important; */
 }
 toolbar {
   -moz-appearance: none !important;
@@ -23,6 +23,7 @@ toolbar {
  * menu bar
  */
 #toolbar-menubar {
+  display: none !important;
 }
 
 /*
@@ -60,12 +61,13 @@ toolbar {
   height: 16px !important;
 
   min-height: 0px !important;
-  padding: 2px 3px !important;
-  font-family: Terminus !important;
-  font-size: 12pt !important;
+  padding: 2px 2px !important;
+  font-family: dejavu sans mono !important;
+  font-size: 10pt !important;
 }
 .tabbrowser-tab[selected] {
   color: #f57900 !important;
+  font-weight: bold !important;
 }
 .tabbrowser-tab:hover {
   color: #fcaf3e !important;

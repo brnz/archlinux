@@ -58,9 +58,9 @@ mpd_communication_mode = "notifications" (polling/notifications)
 ## If you set format to 44100:16:2, make it 'yes'.
 ##
 #
-#visualizer_in_stereo = "no"
+visualizer_in_stereo = "yes"
 #
-#visualizer_fifo_path = ""
+visualizer_fifo_path = "/tmp/mpd.fifo"
 #
 ##
 ## Note: Below parameter is needed for ncmpcpp
@@ -70,7 +70,7 @@ mpd_communication_mode = "notifications" (polling/notifications)
 ## are some problems with it.
 ##
 #
-#visualizer_output_name = ""
+visualizer_output_name = "My FIFO"
 #
 ##
 ## Note: Below parameter defines how often ncmpcpp
@@ -80,14 +80,14 @@ mpd_communication_mode = "notifications" (polling/notifications)
 ## Keep in mind that sane values start with >=10.
 ##
 #
-#visualizer_sync_interval = "30"
+visualizer_sync_interval = "1"
 #
 ##
 ## Note: To enable spectrum frequency visualization
 ## you need to compile ncmpcpp with fftw3 support.
 ##
 #
-#visualizer_type = "wave" (spectrum/wave)
+visualizer_type = "spectrum" (spectrum/wave)
 #
 #visualizer_look = "◆│"
 #
@@ -170,11 +170,11 @@ mpd_communication_mode = "notifications" (polling/notifications)
 ## Note: colors can be nested.
 ##
 #
-song_list_format = "{%a $1‣ $9}{%t}|{$8%f$9}$R{$1%l$9}"
+song_list_format = "{%a $1- %n $9}{%t}|{$8%f$9}$R{$1%b $9}{%l}"
 #
-song_status_format = "{%a{ $b%b$/b{ %y}} $b‣ $/b}{$8%t$9}|{%f}"
+song_status_format = "{$8%a$9{ $b%b$/b{ $8%y$9}} $b- $/b}{$8%t$9}|{%f}"
 #
-song_library_format = "{%n }{%t}|{%f}"
+song_library_format = "{$1%n $9}{%t}|{%f}"
 #
 #tag_editor_album_format = "{(%y) }%b"
 #
@@ -195,20 +195,20 @@ song_library_format = "{%n }{%t}|{%f}"
 ## with reversed colors.
 ##
 #
-#alternative_header_first_line_format = "$b$1$aqqu$/a$9 {%t}|{%f} $1$atqq$/a$9$/b"
+alternative_header_first_line_format = "$1$aqqu$/a$9 {$8$b%t$/b$9}|{%f} $1$atqq$/a$9"
 #
-#alternative_header_second_line_format = "{{$4$b%a$/b$9}{ - $7%b$9}{ ($4%y$9)}}|{%D}"
+alternative_header_second_line_format = "{{$8%a$9}{ $b%b$/b}{ $8%y$9}}|{%D}"
 #
 ##
 ## Note: Below variables also supports
 ## text attributes listed above.
 ##
 #
-now_playing_prefix = "$1$b‣‣ $/b$9$7"
+now_playing_prefix = "$1-- $9$7"
 #
 now_playing_suffix = "$9"
 #
-#browser_playlist_prefix = "$2playlist$9 "
+browser_playlist_prefix = "$1playlist$9 "
 #
 #selected_item_prefix = "$6"
 #
@@ -463,7 +463,7 @@ header_window_color = "black"
 #
 volume_color = "yellow"
 #
-#state_line_color = "default"
+state_line_color = "black"
 #
 #state_flags_color = "default"
 #

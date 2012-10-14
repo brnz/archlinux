@@ -42,7 +42,7 @@ prnt_ncfg ()
     crrnt="${crrnt#*-}"
     if [[ "$crrnt" == "" ]]
     then
-        crrnt="sorry bud"
+        crrnt="sorry :("
     fi
     echo -ne ${crrnt}
 }
