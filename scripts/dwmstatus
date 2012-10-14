@@ -51,6 +51,7 @@ prnt_ncmp ()
 {
     music="$(ncmpcpp --now-playing)"
     music="${music#* }"
+    music="${music/-/>}"
     echo -ne ${music}
 }
 
