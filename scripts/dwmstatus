@@ -42,7 +42,7 @@ prnt_ncfg ()
     crrnt="${crrnt#*-}"
     if [[ "$crrnt" == "" ]]
     then
-        crrnt="sorry :("
+        crrnt="off"
     fi
     echo -ne ${crrnt}
 }
@@ -72,6 +72,6 @@ prnt_case ()
 
 while true
 do
-    xsetroot -name "$(prnt_case lower)"
+    xsetroot -name "$(prnt_case)"
     sleep .01
 done
