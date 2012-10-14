@@ -58,9 +58,9 @@ mpd_communication_mode = "notifications" (polling/notifications)
 ## If you set format to 44100:16:2, make it 'yes'.
 ##
 #
-visualizer_in_stereo = "yes"
+#visualizer_in_stereo = "yes"
 #
-visualizer_fifo_path = "/tmp/mpd.fifo"
+#visualizer_fifo_path = "/tmp/mpd.fifo"
 #
 ##
 ## Note: Below parameter is needed for ncmpcpp
@@ -70,7 +70,7 @@ visualizer_fifo_path = "/tmp/mpd.fifo"
 ## are some problems with it.
 ##
 #
-visualizer_output_name = "My FIFO"
+#visualizer_output_name = "My FIFO"
 #
 ##
 ## Note: Below parameter defines how often ncmpcpp
@@ -80,14 +80,14 @@ visualizer_output_name = "My FIFO"
 ## Keep in mind that sane values start with >=10.
 ##
 #
-visualizer_sync_interval = "1"
+#visualizer_sync_interval = "1"
 #
 ##
 ## Note: To enable spectrum frequency visualization
 ## you need to compile ncmpcpp with fftw3 support.
 ##
 #
-visualizer_type = "spectrum" (spectrum/wave)
+#visualizer_type = "spectrum" (spectrum/wave)
 #
 #visualizer_look = "◆│"
 #
@@ -174,7 +174,7 @@ song_list_format = "{%a $1- %n $9}{%t}|{$8%f$9}$R{$1%b $9}{%l}"
 #
 song_status_format = "{$8%a$9{ $b%b$/b{ $8%y$9}} $b- $/b}{$8%t$9}|{%f}"
 #
-song_library_format = "{$1%n $9}{%t}|{%f}"
+song_library_format = "{$1%n $9}{%t}|{%f}$R{$1%l$9}"
 #
 #tag_editor_album_format = "{(%y) }%b"
 #
@@ -204,7 +204,7 @@ alternative_header_second_line_format = "{{$8%a$9}{ $b%b$/b}{ $8%y$9}}|{%D}"
 ## text attributes listed above.
 ##
 #
-now_playing_prefix = "$1-- $9$7"
+now_playing_prefix = "$1 $9$7"
 #
 now_playing_suffix = "$9"
 #
@@ -254,7 +254,7 @@ song_window_title_format = "{%a - }{%t}|{%f}"
 ##   not available.
 ##
 #
-#song_columns_list_format = "(7f)[blue]{l} (25)[black]{a} (40)[black]{t|f} (30)[black]{b}"
+song_columns_list_format = "(25)[]{a} (5f)[black]{y} (30)[]{b} (3f)[black]{n} (40)[]{t|f} (7f)[]{lr}"
 #
 ##### various settings #####
 #
