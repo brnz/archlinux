@@ -1,7 +1,0 @@
-#!/bin/bash
-
-cp -a ~/{dwm,scripts,.gtkrc-2.0,.bash_profile,.bashrc,.emacs,.hgrc,.ncmpcpp,.rtorrent.rc,colors,.vimrc,.xbindkeysrc,.xinitrc,.Xresources,.mozilla/firefox/h30r20tn.default/chrome/userChrome.css} ~/hz
-cd ~/hz
-git add . -A
-git commit -m 'auto update'
-git push -u origin master

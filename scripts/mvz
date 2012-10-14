@@ -1,8 +1,0 @@
-#!/bin/bash
-
-a=1
-for i in *.$2; do
-    new=$(printf "$1%02d.$2" ${a})
-    mv ${i} ${new}
-    let "a = a + 1"
-done
