@@ -1,0 +1,6 @@
+#!/bin/bash
+
+cd ~/dwm
+makepkg -g >> PKGBUILD
+makepkg -efi
+killall dwm
