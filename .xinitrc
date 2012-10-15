@@ -21,6 +21,7 @@ hsetroot -center ~/imgs/Grizzly_Bear_s.jpg
 xbindkeys
 
 xset +fp /usr/share/fonts/local
+xset +fp ~/.fonts
 xset fp rehash
 
 exec ck-launch-session dbus-launch --sh-syntax --exit-with-session ~/scripts/dwmz
