@@ -23,6 +23,7 @@ hz() {
     git add . -A
     git commit -m 'auto update'
     git push -u origin master
+    cd -
 }
 
 # movez
@@ -62,4 +63,5 @@ rf() {
     mkfontscale
     mkfontdir
     xset fp rehash
+    cd -
 }
