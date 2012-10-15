@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const char font[]            = "-*-tamsynmmxii-medium-*-*-*-14-*-*-*-*-*-*-*";
+static const char font[]            = "-*-nyc-medium-*-*-*-14-*-*-*-*-*-*-*";
 static const char normbordercolor[] = "#111113";
 static const char normbgcolor[]     = "#111113";
 static const char normfgcolor[]     = "#888a85";
@@ -31,7 +31,7 @@ static const Layout layouts[] = {
 	/* symbol     arrange function */
 	{ "[]=",      tile },    /* first entry is default */
 	{ "><>",      NULL },    /* no layout function means floating behavior */
-	{ "[m]",      monocle },
+	{ "[M]",      monocle },
 };
 
 /* key definitions */

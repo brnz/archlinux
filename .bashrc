@@ -18,7 +18,7 @@ PS1='\[\e[1;30m\]\u \W\[\e[m\] \[\e[1;33m\]\$\[\e[m\] '
 
 # Hz
 hz() {
-    cp -a ~/{dwm,scripts,.gtkrc-2.0,.bash_profile,.bashrc,.emacs,.hgrc,.ncmpcpp,.rtorrent.rc,colors,.vimrc,.xbindkeysrc,.xinitrc,.Xresources,.mozilla/firefox/h30r20tn.default/chrome/userChrome.css} ~/hz
+    cp -a ~/{dwm,scripts,.gtkrc-2.0,.bash_profile,.bashrc,.emacs,.hgrc,.ncmpcpp,.rtorrent.rc,colors,.vimrc,.xbindkeysrc,.xinitrc,.Xresources,.mozilla/firefox/h30r20tn.default/chrome/userChrome.css,.fonts} ~/hz
     cd ~/hz
     git add . -A
     git commit -m 'auto update'
@@ -53,4 +53,13 @@ xz() {
     for i in $1; do
         7z x ${1}
     done
+}
+
+# refresh
+rf() {
+    xrdb -merge ~/.Xresources
+    cd ~/.fonts
+    mkfontscale
+    mkfontdir
+    xset fp rehash
 }
