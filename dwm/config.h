@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const char font[]            = "-*-tamsyn-medium-*-*-*-14-*-*-*-*-*-*-*";
+static const char font[]            = "-*-tamsynmmxii-medium-*-*-*-14-*-*-*-*-*-*-*";
 static const char normbordercolor[] = "#111113";
 static const char normbgcolor[]     = "#111113";
 static const char normfgcolor[]     = "#888a85";
@@ -29,9 +29,9 @@ static const Bool resizehints = False; /* True means respect size hints in tiled
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "> t",      tile },    /* first entry is default */
-	{ "> f",      NULL },    /* no layout function means floating behavior */
-	{ "> m",      monocle },
+	{ "[]=",      tile },    /* first entry is default */
+	{ "><>",      NULL },    /* no layout function means floating behavior */
+	{ "[m]",      monocle },
 };
 
 /* key definitions */

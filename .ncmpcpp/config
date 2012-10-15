@@ -112,11 +112,11 @@ mpd_communication_mode = "notifications" (polling/notifications)
 #
 ## delay after playlist highlighting will be disabled (0 = don't disable)
 #
-#playlist_disable_highlight_delay = "5"
+playlist_disable_highlight_delay = "2"
 #
 ## defines how long various messages are supposed to be visible
 #
-#message_delay_time = "4"
+message_delay_time = "1"
 #
 ##### song format #####
 ##
@@ -195,7 +195,7 @@ song_library_format = "{$1%n $9}{%t}|{%f}$R{$1%l$9}"
 ## with reversed colors.
 ##
 #
-alternative_header_first_line_format = "$1$aqqu$/a$9 {$8$b%t$/b$9}|{%f} $1$atqq$/a$9"
+alternative_header_first_line_format = "$1$aqqu$/a$9 {$5$b%t$/b$9}|{%f} $1$atqq$/a$9"
 #
 alternative_header_second_line_format = "{{$8%a$9}{ $b%b$/b}{ $8%y$9}}|{%D}"
 #
