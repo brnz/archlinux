@@ -41,7 +41,11 @@ prnt_ncfg ()
     crrnt="$(netcfg current)"
     crrnt="${crrnt#*-}"
     if [[ "$crrnt" == "" ]]; then
-        echo -ne "[\x0boff\x05]"
+        if [[ "$(ifconfig eth0)" == *RUNNING* ]]; then
+            echo -ne "[\x06eth0\x05]"
+        else
+            echo -ne "[\x0boff\x05]"
+        fi
     else
         echo -ne "[\x06${crrnt}\x05]"
     fi
@@ -52,7 +56,9 @@ prnt_ncmp ()
     music="$(ncmpcpp --now-playing)"
     music="${music#* }"
     music="${music/-/\x03>\x01}"
-    echo -ne ${music}
+    if [[ ! "$music" == "" ]]; then
+        echo -ne "\x03¤\x01 ${music}"
+    fi
 }
 
 prnt_case ()
