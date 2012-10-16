@@ -10,9 +10,9 @@ prnt_acpi ()
     bttry=$(printf "%03d" ${bttry})
 
     if [[ "$adptr" == *on-line* ]]; then
-        echo -ne "Pwr ${bttry}"
+        echo -ne "\x05Pwr \x07${bttry}"
     else
-        echo -ne "Pwr ${bttry}"
+        echo -ne "\x05Pwr \x0a${bttry}"
     fi
 }
 
@@ -21,43 +21,44 @@ prnt_amxr ()
     mastr=$(amixer get Master)
 
     if [[ "$mastr" == *off* ]]; then
-        echo -ne "Vol mut"
+        echo -ne "Vol \x0bmut"
     else
         mastr="${mastr#*[}"
         l="%*"
         mastr="${mastr%$l}"
         mastr=$(printf "%03d" ${mastr})
-        echo -ne "Vol ${mastr}"
+        echo -ne "Vol \x08${mastr}"
     fi
 }
 
 prnt_date ()
 {
-    echo -ne "$(date "+%a %m.%d | %H:%M")"
+    echo -ne "$(date "+%a %m.%d %H:%M")"
 }
 
 prnt_ncfg ()
 {
     crrnt="$(netcfg current)"
     crrnt="${crrnt#*-}"
-    if [[ "$crrnt" == "" ]]
-    then
-        crrnt="off"
+    if [[ "$crrnt" == "" ]]; then
+        echo -ne "[\x0boff\x05]"
+    else
+        echo -ne "[\x0a${crrnt}\x05]"
     fi
-    echo -ne ${crrnt}
 }
 
 prnt_ncmp ()
 {
     music="$(ncmpcpp --now-playing)"
     music="${music#* }"
-    music="${music/-/>}"
+    music="${music/-/\x03>\x01}"
     echo -ne ${music}
 }
 
 prnt_case ()
 {
-    strng="$(prnt_ncmp) | $(prnt_ncfg) | $(prnt_amxr) | $(prnt_acpi) | $(prnt_date)"
+    strng="$(prnt_ncmp) \x04¦\x05 $(prnt_ncfg) $(prnt_amxr) $(prnt_acpi) \x0c¦\x0d $(prnt_date) \x0d¦\x01§"
+    strng="${strng/$/}"
     case $1 in
     lower)
         echo -ne ${strng} | tr '[A-Z]' '[a-z]'
@@ -71,8 +72,7 @@ prnt_case ()
     esac
 }
 
-while true
-do
+while true; do
     xsetroot -name "$(prnt_case)"
     sleep .01
 done

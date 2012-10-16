@@ -13,8 +13,31 @@ static const unsigned int snap      = 32;       /* snap pixel */
 static const Bool showbar           = True;     /* False means no bar */
 static const Bool topbar            = True;     /* False means bottom bar */
 
+/* key def */
+#define NUMCOLORS 13
+
+/* colors */
+static const char colors[NUMCOLORS][ColLast][9] = {
+    /* border   foreground  background */
+    { "#111113", "#888a85", "#111113" }, /* (1) normal */
+    { "#2e3436", "#eeeeec", "#111113" }, /* (2) selected */
+    { "#111113", "#2e3436", "#111113" }, /* (3) urgent */
+    { "#111113", "#19191c", "#111113" }, /* (4) divider 1 */
+    { "#19191c", "#555753", "#19191c" }, /* (5) section 1 */
+    { "#19191c", "#3465a4", "#19191c" }, /* (6) section 1 blue */
+    { "#19191c", "#73d216", "#19191c" }, /* (7) section 1 green */
+    { "#19191c", "#edd400", "#19191c" }, /* (8) section 1 yellow */
+    { "#ffffff", "#ffffff", "#ffffff" }, /* (9) buggy as fuck */
+    { "#19191c", "#f57900", "#19191c" }, /* (a) section 1 orange */
+    { "#19191c", "#cc0000", "#19191c" }, /* (b) section 1 red */
+    { "#19191c", "#babdb6", "#19191c" }, /* (c) divider 2 */
+    { "#babdb6", "#111113", "#babdb6" }, /* (d) section 2 */
+    // { "#75507b", "#111113", "#75507b" }, /* (e) section 2 black */
+};
+
+
 /* tagging */
-static const char *tags[] = { "u", "d", "t", "q" };
+static const char *tags[] = { "1", "2", "3", "4" };
 
 static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
