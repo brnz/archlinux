@@ -58,7 +58,7 @@ xz() {
 }
 
 # refresh
-rf() {
+fr() {
     xrdb -merge ~/.Xresources
     cd ~/.fonts
     mkfontscale

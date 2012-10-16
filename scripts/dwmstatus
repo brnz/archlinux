@@ -12,7 +12,7 @@ prnt_acpi ()
     if [[ "$adptr" == *on-line* ]]; then
         echo -ne "\x05Pwr \x07${bttry}"
     else
-        echo -ne "\x05Pwr \x0a${bttry}"
+        echo -ne "\x05Pwr \x0b${bttry}"
     fi
 }
 
@@ -43,7 +43,7 @@ prnt_ncfg ()
     if [[ "$crrnt" == "" ]]; then
         echo -ne "[\x0boff\x05]"
     else
-        echo -ne "[\x0a${crrnt}\x05]"
+        echo -ne "[\x06${crrnt}\x05]"
     fi
 }
 
@@ -57,7 +57,7 @@ prnt_ncmp ()
 
 prnt_case ()
 {
-    strng="$(prnt_ncmp) \x04¦\x05 $(prnt_ncfg) $(prnt_amxr) $(prnt_acpi) \x0c¦\x0d $(prnt_date) \x0d¦\x01§"
+    strng="$(prnt_ncmp) \x04¦\x05 $(prnt_ncfg) $(prnt_amxr) $(prnt_acpi) \x0c¦\x0d $(prnt_date) \x0c¨\x05§"
     strng="${strng/$/}"
     case $1 in
     lower)

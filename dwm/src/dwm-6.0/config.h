@@ -13,28 +13,25 @@ static const unsigned int snap      = 32;       /* snap pixel */
 static const Bool showbar           = True;     /* False means no bar */
 static const Bool topbar            = True;     /* False means bottom bar */
 
-/* key def */
-#define NUMCOLORS 13
 
-/* colors */
-static const char colors[NUMCOLORS][ColLast][9] = {
-    /* border   foreground  background */
-    { "#111113", "#888a85", "#111113" }, /* (1) normal */
-    { "#2e3436", "#eeeeec", "#111113" }, /* (2) selected */
-    { "#111113", "#2e3436", "#111113" }, /* (3) urgent */
+/* statuscolors-6.0 - shittiest patch ever */
+#define NUMCOLORS 13
+const char colors[NUMCOLORS][ColLast][8] = {
+    /* border     foreground background */
+    { "#111113", "#888a85", "#111113" }, /* (1) section 0 norm */
+    { "#2e3436", "#eeeeec", "#111113" }, /* (2) section 0 sel */
+    { "#111113", "#2e3436", "#111113" }, /* (3) section 0 misc */
     { "#111113", "#19191c", "#111113" }, /* (4) divider 1 */
-    { "#19191c", "#555753", "#19191c" }, /* (5) section 1 */
+    { "#19191c", "#555753", "#19191c" }, /* (5) section 1 grey */
     { "#19191c", "#3465a4", "#19191c" }, /* (6) section 1 blue */
     { "#19191c", "#73d216", "#19191c" }, /* (7) section 1 green */
     { "#19191c", "#edd400", "#19191c" }, /* (8) section 1 yellow */
-    { "#ffffff", "#ffffff", "#ffffff" }, /* (9) buggy as fuck */
-    { "#19191c", "#f57900", "#19191c" }, /* (a) section 1 orange */
+    { "#ffffff", "#ffffff", "#ffffff" }, /* (9) shit is broken */
+    { "#ffffff", "#ffffff", "#ffffff" }, /* (a) shit is broken */
     { "#19191c", "#cc0000", "#19191c" }, /* (b) section 1 red */
     { "#19191c", "#babdb6", "#19191c" }, /* (c) divider 2 */
-    { "#babdb6", "#111113", "#babdb6" }, /* (d) section 2 */
-    // { "#75507b", "#111113", "#75507b" }, /* (e) section 2 black */
+    { "#babdb6", "#19191c", "#babdb6" }, /* (d) section 2 grey */
 };
-
 
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4" };
