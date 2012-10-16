@@ -802,14 +802,17 @@ drawcoloredtext(char *text) {
 void
 drawsquare(Bool filled, Bool empty, unsigned long col[ColLast]) {
 
-	int x;
+	int x, i;
+    int asteriskX[] = { 4, 4, 5, 5, 4, 5, 5 };
+    int asteriskY[] = { 2, 3, 2, 3, 5, 4, 4 };
 
 	XSetForeground(dpy, dc.gc, col[ColFG]);
 	x = (dc.font.ascent + dc.font.descent + 2) / 4;
-	if(filled)
-		XFillRectangle(dpy, dc.drawable, dc.gc, dc.x+1, dc.y+1, x+1, x+1);
-	else if(empty)
-		XDrawRectangle(dpy, dc.drawable, dc.gc, dc.x+1, dc.y+1, x, x);
+    if( filled || empty ) {
+        for( i = 0; i < 7; i++ ) {
+            XDrawPoint(dpy, dc.drawable, dc.gc, dc.x+asteriskX[i], dc.y+asteriskY[i]);
+        }
+    }
 }
 
 void
