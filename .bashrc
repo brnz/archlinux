@@ -14,6 +14,7 @@ alias emacs='emacs -nw'
 alias vlc='cvlc'
 alias dwmi='~/scripts/dwmi'
 alias nyc='urxvt -fn "xft:nyc:pixel=10"'
+alias hcl='rm ~/.bash_history; history -c;'
 #PS1='\[\e[0;30m\]\u \W\[\e[m\] \[\e[0;33m\]\$\[\e[m\] '
 PS1='\[\e[1;30m\]\u \W\[\e[m\] \[\e[1;33m\]\$\[\e[m\] '
 

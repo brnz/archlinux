@@ -804,7 +804,7 @@ drawsquare(Bool filled, Bool empty, unsigned long col[ColLast]) {
 
 	int x, i;
     int asteriskX[] = { 4, 4, 5, 5, 4, 5, 5 };
-    int asteriskY[] = { 2, 3, 2, 3, 5, 4, 4 };
+    int asteriskY[] = { 3, 4, 3, 4, 6, 5, 5 };
 
 	XSetForeground(dpy, dc.gc, col[ColFG]);
 	x = (dc.font.ascent + dc.font.descent + 2) / 4;
