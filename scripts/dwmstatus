@@ -33,7 +33,7 @@ prnt_amxr ()
 
 prnt_date ()
 {
-    echo -ne "$(date "+%a %m.%d %H:%M")"
+    echo -ne "$(date "+%a %m.%d \x0e[\x0d%H:%M\x0e]\x0d")"
 }
 
 prnt_ncfg ()

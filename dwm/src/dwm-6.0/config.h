@@ -15,7 +15,7 @@ static const Bool topbar            = True;     /* False means bottom bar */
 
 
 /* statuscolors-6.0 - shittiest patch ever */
-#define NUMCOLORS 13
+#define NUMCOLORS 14
 const char colors[NUMCOLORS][ColLast][8] = {
     /* border     foreground background */
     { "#111113", "#888a85", "#111113" }, /* (1) section 0 norm */
@@ -30,11 +30,12 @@ const char colors[NUMCOLORS][ColLast][8] = {
     { "#ffffff", "#ffffff", "#ffffff" }, /* (a) shit is broken */
     { "#19191c", "#cc0000", "#19191c" }, /* (b) section 1 red */
     { "#19191c", "#babdb6", "#19191c" }, /* (c) divider 2 */
-    { "#babdb6", "#19191c", "#babdb6" }, /* (d) section 2 grey */
+    { "#babdb6", "#19191c", "#babdb6" }, /* (d) section 2 black */
+    { "#babdb6", "#888a85", "#babdb6" }, /* (e) section 2 grey */
 };
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "q", "w", "e", "r" };
+static const char *tags[] = { "01", "02", "03", "04", "Ff" };
 
 static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
@@ -100,10 +101,10 @@ static Key keys[] = {
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
 	TAGKEYS(                        XK_4,                      3)
-	TAGKEYS(                        XK_q,                      4)
-	TAGKEYS(                        XK_w,                      5)
-	TAGKEYS(                        XK_e,                      6)
-	TAGKEYS(                        XK_r,                      7)
+	TAGKEYS(                        XK_5,                      4)
+	TAGKEYS(                        XK_6,                      5)
+	TAGKEYS(                        XK_7,                      6)
+	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 };
