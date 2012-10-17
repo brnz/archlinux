@@ -31,11 +31,11 @@ const char colors[NUMCOLORS][ColLast][8] = {
     { "#19191c", "#cc0000", "#19191c" }, /* (b) section 1 red */
     { "#19191c", "#babdb6", "#19191c" }, /* (c) divider 2 */
     { "#babdb6", "#19191c", "#babdb6" }, /* (d) section 2 black */
-    { "#babdb6", "#888a85", "#babdb6" }, /* (e) section 2 grey */
+    { "#babdb6", "#7f967c", "#babdb6" }, /* (e) section 2 grey */
 };
 
 /* tagging */
-static const char *tags[] = { "01", "02", "03", "04", "Ff" };
+static const char *tags[] = { "1", "2", "3", "4" };
 
 static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
@@ -52,7 +52,7 @@ static const Layout layouts[] = {
 	/* symbol     arrange function */
 	{ "[]=",      tile },    /* first entry is default */
 	{ "><>",      NULL },    /* no layout function means floating behavior */
-	{ "[M]",      monocle },
+	{ "[m]",      monocle },
 };
 
 /* key definitions */

@@ -33,7 +33,7 @@ prnt_amxr ()
 
 prnt_date ()
 {
-    echo -ne "$(date "+%a %m.%d \x0e[\x0d%H:%M\x0e]\x0d")"
+    echo -ne "$(date "+%a %m.%d %H:%M\x0e:%S\x0d")"
 }
 
 prnt_ncfg ()
@@ -57,7 +57,7 @@ prnt_ncmp ()
     music="${music#* }"
     music="${music/-/\x03>\x01}"
     if [[ ! "$music" == "" ]]; then
-        echo -ne "\x03¤\x01 ${music}"
+        echo -ne "${music}"
     fi
 }
 

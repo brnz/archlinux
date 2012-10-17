@@ -52,14 +52,12 @@ sshot() {
 }
 
 # xztract
-xz() {
-    for i in $1; do
-        7z x ${1}
-    done
+xzt() {
+    7z x ${1}
 }
 
 # refresh
-fr() {
+fresh() {
     xrdb -merge ~/.Xresources
     cd ~/.fonts
     mkfontscale
