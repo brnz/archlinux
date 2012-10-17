@@ -86,8 +86,3 @@ toolbarbutton {
 .tab-throbber {
   display: none !important;
 }
-
-#main-window:not([disablechrome]) #navigator-toolbox[tabsontop=true] {
-  border-bottom: 1px solid ThreeDShadow;
-  border-style: none !important;
-}
