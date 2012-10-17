@@ -18,6 +18,9 @@ toolbar {
   border-bottom: 0px !important;
   border-left: 0px !important;
 }
+#main-window:not([disablechrome]) #navigator-toolbox[tabsontop=true] {
+  border-style: none !important;
+}
 
 /*
  * menu bar
@@ -30,7 +33,7 @@ toolbar {
  * navigation toolbar 
  */
 #urlbar {
-  /* -moz-appearance: none !important; */
+  display: none !important;
 }
 .ac-comment {
   font-size: 10pt !important;
@@ -82,4 +85,9 @@ toolbarbutton {
 }
 .tab-throbber {
   display: none !important;
+}
+
+#main-window:not([disablechrome]) #navigator-toolbox[tabsontop=true] {
+  border-bottom: 1px solid ThreeDShadow;
+  border-style: none !important;
 }
