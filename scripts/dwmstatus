@@ -55,7 +55,7 @@ prnt_ncmp ()
 {
     music="$(ncmpcpp --now-playing)"
     music="${music#* }"
-    music="${music/-/\x03>\x01}"
+    music="${music/ - / \x03>\x01 }"
     if [[ ! "$music" == "" ]]; then
         echo -ne "${music}"
     fi
