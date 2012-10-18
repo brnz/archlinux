@@ -12,9 +12,11 @@ alias ls='ls -X --color=auto'
 alias ll='ls -Ahl'
 alias emacs='emacs -nw'
 alias vlc='cvlc'
+alias sudo='sudo '
 alias dwmi='~/scripts/dwmi'
 alias nyc='urxvt -fn "xft:nyc:pixel=10"'
 alias hcl='rm ~/.bash_history; history -c;'
+alias pacman='echo Nothing'
 #PS1='\[\e[0;30m\]\u \W\[\e[m\] \[\e[0;33m\]\$\[\e[m\] '
 PS1='\[\e[1;30m\]\u \W\[\e[m\] \[\e[1;33m\]\$\[\e[m\] '
 
@@ -53,7 +55,9 @@ sshot() {
 
 # xztract
 xzt() {
-    7z x ${1}
+    for i in *; do
+        7z x ${i}
+    done
 }
 
 # refresh
