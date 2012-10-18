@@ -170,7 +170,7 @@ message_delay_time = "1"
 ## Note: colors can be nested.
 ##
 #
-song_list_format = "{%a $1- %n $9}{%t}|{$8%f$9}$R{$1%b $9}{%l}"
+song_list_format = "{%a $1%n $9}{%t}|{$8%f$9}$R{$1%b %y $9}{%l}"
 #
 song_status_format = "{$8%a$9{ $b%b$/b{ $8%y$9}} $b- $/b}{$8%t$9}|{%f}"
 #
