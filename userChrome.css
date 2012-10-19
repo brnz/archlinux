@@ -86,3 +86,10 @@ toolbarbutton {
 .tab-throbber {
   display: none !important;
 }
+
+/*
+ * find bar
+ */
+#find-field-container {
+  display: none !important;
+}

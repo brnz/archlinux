@@ -14,6 +14,13 @@ alias emacs='emacs -nw'
 #alias vlc='cvlc'
 alias sudo='sudo '
 alias suvi='sudo vim'
+
+# sysadmin
+alias shutdown='sudo shutdown -ht sec 0'
+alias reboot='sudo reboot'
+alias suspend='sudo pm-suspend'
+
+# misc
 alias dwmi='~/scripts/dwmi'
 alias nyc='urxvt -fn "xft:nyc:pixel=10"'
 alias hcl='rm ~/.bash_history; history -c;'
@@ -55,11 +62,11 @@ sshot() {
 }
 
 # exztract
-xzt() {
-    for i in *; do
-        7z x ${i}
-    done
-}
+#xzt() {
+#    for i in *; do
+#        7z x ${i}
+#    done
+#}
 
 # refresh
 fresh() {
