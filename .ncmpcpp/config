@@ -413,7 +413,7 @@ titles_visibility = "no"
 #
 #mouse_list_scroll_whole_page = "yes"
 #
-#empty_tag_marker = "<empty>"
+empty_tag_marker = ""
 #
 #tag_editor_extended_numeration = "no"
 #

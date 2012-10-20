@@ -25,6 +25,11 @@ alias dwmi='~/scripts/dwmi'
 alias nyc='urxvt -fn "xft:nyc:pixel=10"'
 alias hcl='rm ~/.bash_history; history -c;'
 alias pacman='echo 'Nothing''
+
+# FALL 2012
+alias katz='ssh cs61c-ev@hive8.cs.berkeley.edu'
+alias vaz='ssh cs70-ik@hive8.cs.berkeley.edu'
+
 #PS1='\[\e[0;30m\]\u \W\[\e[m\] \[\e[0;33m\]\$\[\e[m\] '
 PS1='\[\e[1;30m\]\u \W\[\e[m\] \[\e[1;33m\]\$\[\e[m\] '
 
@@ -76,4 +81,12 @@ fresh() {
     mkfontdir
     xset fp rehash
     cd -
+}
+
+# lameV
+lamev() {
+    mkdir new
+    for i in *.mp3; do
+        lame -V 2 --verbose ${i} new/${i}
+    done
 }
