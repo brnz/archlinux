@@ -1,3 +1,6 @@
+! X11
+Xcursor.theme:          Bluecurve
+
 ! urxvt
 URxvt.scrollBar:        false
 URxvt.cursorBlink:      true
