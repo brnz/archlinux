@@ -16,7 +16,7 @@ fi
 # exec startxfce4
 # ...or the Window Manager of your choice
 
-hsetroot -center ~/img/Linen.png
+hsetroot -fill ~/.wallpaper/Retro.png
 
 xbindkeys
 
