@@ -24,7 +24,7 @@ alias suspend='sudo pm-suspend'
 alias dwmi='~/scripts/dwmi'
 alias nyc='urxvt -fn "xft:nyc:pixel=10"'
 alias hcl='rm ~/.bash_history; history -c;'
-alias pacman='echo 'Nothing''
+#alias pacman='echo 'Nothing''
 
 # FALL 2012
 alias katz='ssh cs61c-ev@hive8.cs.berkeley.edu'
