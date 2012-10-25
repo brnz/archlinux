@@ -65,14 +65,13 @@ toolbar {
 
   min-height: 0px !important;
   padding: 2px 2px !important;
-  font-family: dejavu sans mono !important;
+  font-family: nyc !important;
   font-size: 10pt !important;
   font-weight: bold !important;
 }
 .tabbrowser-tab[selected] {
   /* color: #f57900 !important; */
   color: #fcaf3e !important;
-  font-weight: bold !important;
 }
 .tabbrowser-tab:hover {
   color: #fcaf3e !important;

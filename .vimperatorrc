@@ -5,3 +5,4 @@ source! /home/brian/.vimperatorrc.local
 " vim: set ft=vimperator:
 
 set sb=false
+set titlestring='Mozilla Firefox'
