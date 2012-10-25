@@ -1,3 +1,7 @@
+"
+" ~/.vimrc
+"
+
 " colors
 colorscheme peachpuff2
 

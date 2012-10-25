@@ -22,6 +22,7 @@ alias suvi='sudo vim'
 alias shutdown='sudo shutdown -ht sec 0'
 alias reboot='sudo reboot'
 alias suspend='sudo pm-suspend'
+alias pacman='sudo pacman'
 
 # misc
 alias dwmi='~/scripts/dwmi'
