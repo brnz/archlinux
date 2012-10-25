@@ -6,4 +6,4 @@
 
 umask 022
 
-startx
+#startx

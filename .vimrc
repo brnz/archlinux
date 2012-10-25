@@ -1,3 +1,7 @@
+" colors
+colorscheme peachpuff2
+
+" misc
 set expandtab
 set nu
 set tabstop=4
