@@ -34,8 +34,12 @@ alias hcl='rm ~/.bash_history; history -c;'
 alias katz='ssh cs61c-ev@hive8.cs.berkeley.edu'
 alias vaz='ssh cs70-ik@hive8.cs.berkeley.edu'
 
-#PS1='\[\e[0;30m\]\u \W\[\e[m\] \[\e[0;33m\]\$\[\e[m\] '
-PS1='\[\e[1;30m\]\u \W\[\e[m\] \[\e[1;33m\]\$\[\e[m\] '
+# PROMPT
+if [[ "$(ps -C X)" == *X* ]]; then
+    PS1='\[\e[0;30m\]\u \W\[\e[m\] \[\e[0;33m\]\$\[\e[m\] '
+else
+    PS1='\[\e[1;30m\]\u \W\[\e[m\] \[\e[1;33m\]\$\[\e[m\] '
+fi
 
 # Hz
 hzz() {
