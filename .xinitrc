@@ -30,4 +30,4 @@ xset +fp /usr/share/fonts/local
 xset +fp ~/.fonts
 xset fp rehash
 
-exec ck-launch-session dbus-launch --sh-syntax --exit-with-session ~/scripts/dwmz
+exec ck-launch-session dbus-launch --sh-syntax --exit-with-session ~/.scripts/dwminit

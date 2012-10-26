@@ -25,7 +25,7 @@ alias suspend='sudo pm-suspend'
 alias pacman='sudo pacman'
 
 # misc
-alias dwmi='~/scripts/dwmi'
+alias dwmi='~/.scripts/dwminst'
 alias nyc='urxvt -fn "xft:nyc:pixel=10"'
 alias hcl='rm ~/.bash_history; history -c;'
 #alias pacman='echo 'Nothing''
@@ -42,9 +42,9 @@ else
 fi
 
 # Hz
-hzz() {
-    cp -a ~/{dwm,scripts,.gtkrc-2.0,.bash_profile,.bashrc,.emacs,.hgrc,.ncmpcpp,.rtorrent.rc,.vimrc,.xbindkeysrc,.xinitrc,.Xresources,.mozilla/firefox/h30r20tn.default/chrome/userChrome.css,.fonts,.vimperator,.vimperatorrc,.tmux.conf,.vim} ~/Hz
-    cd ~/Hz
+hertz() {
+    cp -a ~/{dwm-6.0,.scripts,.gtkrc-2.0,.bash_profile,.bashrc,.emacs,.hgrc,.ncmpcpp,.rtorrent.rc,.vimrc,.xbindkeysrc,.xinitrc,.Xresources,.mozilla/firefox/h30r20tn.default/chrome/userChrome.css,.fonts,.vimperator,.vimperatorrc,.tmux.conf,.vim} ~/hertz
+    cd ~/hertz
     git add . -A
     git commit -m 'auto update'
     git push -u origin master
