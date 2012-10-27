@@ -1,7 +1,6 @@
 #!/bin/bash
 
-prnt_acpi ()
-{
+prnt_acpi() {
     bttry=$(acpi -b)
     adptr=$(acpi -a)
     thrml=$(acpi -tf)
@@ -16,8 +15,7 @@ prnt_acpi ()
     fi
 }
 
-prnt_amxr ()
-{
+prnt_amxr() {
     mastr=$(amixer get Master)
 
     if [[ "$mastr" == *off* ]]; then
@@ -31,13 +29,11 @@ prnt_amxr ()
     fi
 }
 
-prnt_date ()
-{
+prnt_date() {
     echo -ne "$(date "+%a %m.%d %H:%M\x0e:%S\x0d")"
 }
 
-prnt_ncfg ()
-{
+prnt_ncfg() {
     crrnt="$(netcfg current)"
     crrnt="${crrnt#*-}"
     if [[ "$crrnt" == "" ]]; then
@@ -51,8 +47,7 @@ prnt_ncfg ()
     fi
 }
 
-prnt_ncmp ()
-{
+prnt_ncmp() {
     music="$(ncmpcpp --now-playing)"
     music="${music#* }"
     music="${music/ - / \x03>\x01 }"
@@ -61,8 +56,7 @@ prnt_ncmp ()
     fi
 }
 
-prnt_case ()
-{
+prnt_case() {
     strng="$(prnt_ncmp) \x04¦\x05 $(prnt_ncfg) $(prnt_amxr) $(prnt_acpi) \x0c¦\x0d $(prnt_date) \x0c¨\x05§"
     strng="${strng/$/}"
     case $1 in

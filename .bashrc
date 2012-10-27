@@ -35,11 +35,7 @@ alias katz='ssh cs61c-ev@hive8.cs.berkeley.edu'
 alias vaz='ssh cs70-ik@hive8.cs.berkeley.edu'
 
 # PROMPT
-if [[ "$(ps -C X)" == *X* ]]; then
-    PS1='\[\e[0;30m\]\u \W\[\e[m\] \[\e[0;33m\]\$\[\e[m\] '
-else
-    PS1='\[\e[1;30m\]\u \W\[\e[m\] \[\e[1;33m\]\$\[\e[m\] '
-fi
+PS1='\[\e[1;35m\]\u\[\e[m\]\[\e[1;30m\]:\[\e[m\]\[\e[m\]\[\e[1;37m\]\W\[\e[m\]\[\e[1;33m\]>\[\e[m\] '
 
 # Hz
 hertz() {

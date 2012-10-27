@@ -9,6 +9,7 @@ Xcursor.theme:          Bluecurve
 URxvt.scrollBar:        false
 URxvt.cursorBlink:      true
 URxvt.font:             xft:dejavu sans mono:size=10
+!URxvt.font:             xft:droid sans mono:size=10
 URxvt.perl-ext-common:  default,url-select
 URxvt.colorUL:          #3465a4
 URxvt.keysym.M-u:       perl:url-select:select_next
