@@ -2,13 +2,18 @@
 " ~/.vimrc
 "
 
-" colors
-colorscheme peachpuff2
+" omni completion
+filetype plugin on
+set ofu=syntaxcomplete#Complete
 
-" misc
+" tabs
 set expandtab
-set nu
 set tabstop=4
 set shiftwidth=4
-set smartindent
+set softtabstop=4
+
+colorscheme peachpuff2
+
+set nu
+
 syntax on

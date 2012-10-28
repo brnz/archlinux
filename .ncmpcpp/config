@@ -204,7 +204,7 @@ alternative_header_second_line_format = "{{$8%a$9}{ $b%b$/b}{ $8%y$9}}|{%D}"
 ## text attributes listed above.
 ##
 #
-now_playing_prefix = "$1 $9$7"
+now_playing_prefix = "$7"
 #
 now_playing_suffix = "$9"
 #
