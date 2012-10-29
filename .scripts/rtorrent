@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 cd $HOME/watch
 [[ "$1" =~ xt=urn:btih:([^&/]+) ]] || exit;

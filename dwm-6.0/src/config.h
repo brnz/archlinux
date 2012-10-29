@@ -1,1 +1,1 @@
-/home/brian/dwm/config.h
+/home/brian/dwm-6.0/config.h

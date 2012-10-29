@@ -32,7 +32,7 @@ alias hcl='rm ~/.bash_history; history -c;'
 
 # FALL 2012
 alias katz='ssh cs61c-ev@hive8.cs.berkeley.edu'
-alias vaz='ssh cs70-ik@hive8.cs.berkeley.edu'
+alias vaz='ssh cs70-ik@star.cs.berkeley.edu'
 
 # PROMPT
 PS1='\[\e[1;35m\]\u\[\e[m\]\[\e[1;30m\]:\[\e[m\]\[\e[m\]\[\e[1;37m\]\W\[\e[m\]\[\e[1;33m\]>\[\e[m\] '

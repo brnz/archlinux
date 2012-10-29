@@ -3,8 +3,11 @@
 "
 
 " omni completion
-filetype plugin on
-set ofu=syntaxcomplete#Complete
+"filetype plugin on
+"set ofu=syntaxcomplete#Complete
+
+set smartindent
+set cindent
 
 " tabs
 set expandtab

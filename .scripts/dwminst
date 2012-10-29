@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 cd ~/dwm-6.0
 makepkg -g >> PKGBUILD

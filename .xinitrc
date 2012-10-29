@@ -17,12 +17,7 @@ fi
 # ...or the Window Manager of your choice
 
 #hsetroot -fill ~/.wallpaper/Retro_2560x1600.png
-while true; do
-    for i in ~/.wallpaper/*.JPG; do
-        hsetroot -fill ${i}
-        sleep 1m
-    done
-done &
+exec ~/.scripts/wallpaper &
 
 xbindkeys
 

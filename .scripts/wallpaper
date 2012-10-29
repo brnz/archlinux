@@ -1,0 +1,8 @@
+#!/bin/sh
+
+while true; do
+    for i in ~/.wallpaper/*.JPG; do
+        hsetroot -center ${i}
+        sleep 2m
+    done
+done

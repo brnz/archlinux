@@ -6,4 +6,6 @@
 
 umask 022
 
-#startx
+if [[ ! "$(ps -C X)" == *X* ]]; then
+    startx
+fi
