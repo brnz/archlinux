@@ -8,6 +8,8 @@
 [[ $TERM != "screen" ]] && exec tmux
 [ -n "$TMUX" ] && export TERM=screen-256color
 
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
 #alias ls='ls --color=auto'
 #PS1='[\u@\h \W]\$ '
 
@@ -94,3 +96,5 @@ lamev() {
         lame -V 2 --verbose ${i} new/${i}
     done
 }
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
