@@ -10,6 +10,8 @@
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
 #alias ls='ls --color=auto'
 #PS1='[\u@\h \W]\$ '
 
@@ -19,6 +21,7 @@ alias emacs='emacs -nw'
 #alias vlc='cvlc'
 alias sudo='sudo '
 alias suvi='sudo vim'
+alias wifi='sudo wifi-menu'
 
 # sysadmin
 alias shutdown='sudo shutdown -ht sec 0'
@@ -97,4 +100,11 @@ lamev() {
     done
 }
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+# underscore
+underscore() {
+    if [[ ! "$1" == "" ]]; then
+        while(true); do
+            rename -v ' ' '_' *.${1}
+        done
+    fi
+}
