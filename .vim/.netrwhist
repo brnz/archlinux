@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =4
 let g:netrw_dirhist_1='/home/brian/.scripts'
 let g:netrw_dirhist_2='/home/brian/pdf'
 let g:netrw_dirhist_3='/home/brian/work/proj3'
+let g:netrw_dirhist_4='/etc/modules-load.d'
