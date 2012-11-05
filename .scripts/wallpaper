@@ -2,7 +2,8 @@
 
 while true; do
     for i in ~/.wallpaper/*.gif; do
-        hsetroot -solid "#fefefe" -center ${i}
+        #hsetroot -solid "#fefefe" -center ${i}
+        hsetroot -fill ~/.wallpaper/retro*
         sleep .02s
     done
 done

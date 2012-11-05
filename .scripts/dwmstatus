@@ -76,6 +76,6 @@ prnt_case() {
 }
 
 while true; do
-    xsetroot -name "$(prnt_case)"
+    xsetroot -name "$(prnt_case lower)"
     sleep .01
 done
