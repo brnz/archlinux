@@ -17,24 +17,24 @@ static const Bool topbar            = True;     /* False means bottom bar */
 #define NUMCOLORS 14
 const char colors[NUMCOLORS][ColLast][8] = {
     /* border     foreground background */
-    { "#111113", "#888a85", "#111113" }, /* (1) section 0 norm */
-    { "#2e3436", "#eeeeec", "#111113" }, /* (2) section 0 sel */
-    { "#111113", "#2e3436", "#111113" }, /* (3) section 0 misc */
-    { "#111113", "#19191c", "#111113" }, /* (4) divider 1 */
-    { "#19191c", "#555753", "#19191c" }, /* (5) section 1 grey */
-    { "#19191c", "#3465a4", "#19191c" }, /* (6) section 1 blue */
-    { "#19191c", "#73d216", "#19191c" }, /* (7) section 1 green */
-    { "#19191c", "#edd400", "#19191c" }, /* (8) section 1 yellow */
-    { "#ffffff", "#ffffff", "#ffffff" }, /* (9) shit is broken */
-    { "#ffffff", "#ffffff", "#ffffff" }, /* (a) shit is broken */
-    { "#19191c", "#cc0000", "#19191c" }, /* (b) section 1 red */
-    { "#19191c", "#babdb6", "#19191c" }, /* (c) divider 2 */
-    { "#babdb6", "#19191c", "#babdb6" }, /* (d) section 2 black */
-    { "#babdb6", "#7f967c", "#babdb6" }, /* (e) section 2 grey */
+    { "#111113", "#888a85", "#111113" }, /* (01) section 0 norm */
+    { "#2e3436", "#eeeeec", "#111113" }, /* (02) section 0 sel */
+    { "#111113", "#2e3436", "#111113" }, /* (03) section 0 misc */
+    { "#111113", "#19191c", "#111113" }, /* (04) divider 1 */
+    { "#19191c", "#555753", "#19191c" }, /* (05) section 1 grey */
+    { "#19191c", "#3465a4", "#19191c" }, /* (06) section 1 blue */
+    { "#19191c", "#73d216", "#19191c" }, /* (07) section 1 green */
+    { "#19191c", "#edd400", "#19191c" }, /* (08) section 1 yellow */
+    { "#ffffff", "#ffffff", "#ffffff" }, /* (09) shit is broken */
+    { "#ffffff", "#ffffff", "#ffffff" }, /* (0a) shit is broken */
+    { "#19191c", "#cc0000", "#19191c" }, /* (0b) section 1 red */
+    { "#19191c", "#babdb6", "#19191c" }, /* (0c) divider 2 */
+    { "#babdb6", "#19191c", "#babdb6" }, /* (0d) section 2 black */
+    { "#babdb6", "#7f967c", "#babdb6" }, /* (0e) section 2 grey */
 };
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4" };
+static const char *tags[] = { "u", "d", "t", "q" };
 
 static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
@@ -52,10 +52,10 @@ static const Bool resizehints = False; /* True means respect size hints in tiled
 #include "bstackhoriz.c"
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[]=",      tile },    /* first entry is default */
-	{ "><>",      NULL },    /* no layout function means floating behavior */
-	{ "[m]",      monocle },
-    { "()-",      bstack },
+	{ "`t",      tile },    /* first entry is default */
+	{ "`f",      NULL },    /* no layout function means floating behavior */
+	{ "`m",      monocle },
+    { "`s",      bstack },
 };
 
 /* key definitions */

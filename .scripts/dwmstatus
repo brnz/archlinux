@@ -39,12 +39,12 @@ prnt_ncfg() {
 
     if [[ "$crrnt" == "" ]]; then
         if [[ "$(ifconfig eth0)" == *RUNNING* ]]; then
-            echo -ne "[\x06eth0\x05]"
+            echo -ne "Eth \x06eth0\x05"
         else
-            echo -ne "[\x0boff\x05]"
+            echo -ne "Wifi \x0boff\x05"
         fi
     else
-        echo -ne "[\x06${crrnt}\x05]"
+        echo -ne "Wifi \x06${crrnt}\x05"
     fi
 }
 
@@ -59,7 +59,7 @@ prnt_ncmp() {
 }
 
 prnt_case() {
-    strng="$(prnt_ncmp) \x04¦\x05 $(prnt_ncfg) $(prnt_amxr) $(prnt_acpi) \x0c¦\x0d $(prnt_date) \x0c¨\x05§"
+    strng="$(prnt_ncmp) \x04¦\x05 $(prnt_ncfg) $(prnt_amxr) $(prnt_acpi) \x0c¦\x0d $(prnt_date) \x0c¨\x05©"
     strng="${strng/$/}"
 
     case $1 in
