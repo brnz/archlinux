@@ -1,81 +1,77 @@
-#!/bin/sh
+#!/bin/bash
 
-prnt_acpi() {
-    bttry=$(acpi -b)
-    adptr=$(acpi -a)
-    thrml=$(acpi -tf)
-    bttry="${bttry#*, }"
-    bttry="${bttry%%%*}"
-    bttry=$(printf "%03d" ${bttry})
-
-    if [[ "$adptr" == *on-line* ]]; then
-        echo -ne "\x05Pwr \x07${bttry}"
+print_pwr() {
+    battery="$(acpi -b)"
+    battery="${battery#*, }"
+    battery="${battery%%%*}"
+    battery="$(printf "%03d" ${battery})"
+    if [[ "$(acpi -a)" == *on-line* ]]; then
+        battery="Pwr \x07${battery}"
     else
-        echo -ne "\x05Pwr \x0b${bttry}"
+        battery="Pwr \x0b${battery}"
     fi
+    echo -ne ${battery}
 }
 
-prnt_amxr() {
-    mastr=$(amixer get Master)
-
-    if [[ "$mastr" == *off* ]]; then
-        echo -ne "Vol \x0bmut"
+print_vol() {
+    master=$(amixer get Master)
+    if [[ "$master" == *off* ]]; then
+        master="Vol \x0bmut"
     else
-        mastr="${mastr#*[}"
-        l="%*"
-        mastr="${mastr%$l}"
-        mastr=$(printf "%03d" ${mastr})
-        echo -ne "Vol \x08${mastr}"
+        master="${master#*[}"
+        s="%*"
+        master="${master%$s}"
+        master="$(printf "%03d" ${master})"
+        master="Vol \x08${master}"
     fi
+    echo -ne ${master}
 }
 
-prnt_date() {
+print_date() {
     echo -ne "$(date "+%a %m.%d %H:%M\x0e:%S\x0d")"
 }
 
-prnt_ncfg() {
-    crrnt="$(netcfg current)"
-    crrnt="${crrnt#*-}"
-
-    if [[ "$crrnt" == "" ]]; then
+print_netcfg() {
+    current="$(netcfg current)"
+    current="${current#*-}"
+    if [[ "$current" == "" ]]; then
         if [[ "$(ifconfig eth0)" == *RUNNING* ]]; then
-            echo -ne "Eth \x06eth0\x05"
+            current="Net \x06eth0"
         else
-            echo -ne "Wifi \x0boff\x05"
+            current="Net \x0boff"
         fi
     else
-        echo -ne "Wifi \x06${crrnt}\x05"
+        current="Net \x06${current}"
     fi
+    echo -ne ${current}
 }
 
-prnt_ncmp() {
+print_music() {
     music="$(ncmpcpp --now-playing)"
     music="${music#* }"
     music="${music/ - / \x03-\x01 }"
-
     if [[ ! "$music" == "" ]]; then
-        echo -ne "${music}"
+        echo -ne ${music}
     fi
 }
 
-prnt_case() {
-    strng="$(prnt_ncmp) \x04¦\x05 $(prnt_ncfg) $(prnt_amxr) $(prnt_acpi) \x0c¦\x0d $(prnt_date) \x0c¨\x05©"
-    strng="${strng/$/}"
-
+print_status() {
+    status="$(print_music) \x04¦\x05 $(print_netcfg) \x05$(print_vol) \x05$(print_pwr) \x0c¦\x0d $(print_date) \x0c¨\x05©"
+    status="${status/$/}"
     case $1 in
     lower)
-        echo -ne ${strng} | tr '[A-Z]' '[a-z]'
+        echo -ne ${status} | tr '[A-Z]' '[a-z]'
         ;;
     upper)
-        echo -ne ${strng} | tr '[a-z]' '[A-Z]'
+        echo -ne ${status} | tr '[a-z]' '[A-Z]'
         ;;
     *)
-        echo -ne ${strng}
+        echo -ne ${status}
         ;;
     esac
 }
 
 while true; do
-    xsetroot -name "$(prnt_case lower)"
-    sleep .01
+    xsetroot -name "$(print_status)"
+    sleep .1s
 done

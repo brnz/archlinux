@@ -44,7 +44,7 @@ PS1='\[\e[1;35m\]\u\[\e[m\]\[\e[1;30m\]:\[\e[m\]\[\e[m\]\[\e[1;37m\]\W\[\e[m\]\[
 
 # Hz
 hertz() {
-    cp -a ~/{dwm-6.0,.scripts,.gtkrc-2.0,.bash_profile,.bashrc,.emacs,.hgrc,.ncmpcpp,.rtorrent.rc,.vimrc,.xbindkeysrc,.xinitrc,.Xresources,.mozilla/firefox/h30r20tn.default/chrome/userChrome.css,.fonts,.vimperator,.vimperatorrc,.tmux.conf,.vim} ~/hertz
+    cp -a ~/{.dwm,.scripts,.gtkrc-2.0,.bash_profile,.bashrc,.emacs,.hgrc,.ncmpcpp,.rtorrent.rc,.vimrc,.xbindkeysrc,.xinitrc,.Xresources,.mozilla/firefox/h30r20tn.default/chrome/userChrome.css,.fonts,.vimperator,.vimperatorrc,.tmux.conf,.vim} ~/hertz
     cd ~/hertz
     git add . -A
     git commit -m 'auto update'

@@ -210,9 +210,9 @@ now_playing_suffix = "$9"
 #
 browser_playlist_prefix = "$1playlist$9 "
 #
-#selected_item_prefix = "$6"
+selected_item_prefix = "$4"
 #
-#selected_item_suffix = "$9"
+selected_item_suffix = "$9"
 #
 ## colors are not supported for below variable
 #

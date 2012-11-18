@@ -1,6 +1,6 @@
 #!/bin/sh
 
-cd ~/dwm-6.0
+cd ~/.dwm
 makepkg -g >> PKGBUILD
 makepkg -efi
 killall dwm

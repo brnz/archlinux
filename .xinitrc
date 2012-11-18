@@ -16,8 +16,8 @@ fi
 # exec startxfce4
 # ...or the Window Manager of your choice
 
-#hsetroot -fill ~/.wallpaper/Retro_2560x1600.png
-exec ~/.scripts/wallpaper &
+hsetroot -fill ~/.wallpaper/retro_2560x1600.png
+#exec ~/.scripts/wallpaper &
 
 xbindkeys
 
